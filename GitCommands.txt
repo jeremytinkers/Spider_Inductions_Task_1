@@ -1,0 +1,323 @@
+//Git Commands used in completing the task
+
+
+$ mkdir SpiderTasks
+
+$ cd Spidertasks
+
+$ pwd
+
+$ touch commit1_master.txt
+
+$ start commit1_master.txt
+
+$ git init
+Initialized empty Git repository in C:/Users/bijth/SpiderTasks/.git/
+
+$ git status
+On branch master
+
+$ git add commit1_master.txt
+
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   commit1_master.txt
+
+
+$ git commit -m "Initial Commit"
+[master (root-commit) 83ba8ec] Initial Commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 commit1_master.txt
+
+
+$ git branch develop
+
+
+$ git checkout develop
+Switched to branch 'develop'
+
+
+$ git branch
+* develop
+  master
+
+
+$ touch commit2_develop.txt
+
+
+$ start commit2_develop.txt
+
+
+$ git add commit2_develop.txt
+
+
+$ git commit -m "Commit2_Develop"
+[develop 115b65f] Commit2_Develop
+ 1 file changed, 1 insertion(+)
+ create mode 100644 commit2_develop.txt
+
+
+$ git checkout master
+Switched to branch 'master'
+
+
+$ touch commit3_master.txt
+
+
+$ start commit3_master.txt
+
+
+$ git add commit3_master.txt
+
+
+$ git commit -m "Commit3_master"
+[master 4cbcee6] Commit3_master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 commit3_master.txt
+
+
+$ git checkout develop
+Switched to branch 'develop'
+
+
+$ touch commit4_develop.txt
+
+
+$ start commit4_develop.txt
+
+$ git add commit4_develop.txt
+
+
+$ git commit -m "Commit4_develop"
+[develop 95b258b] Commit4_develop
+ 1 file changed, 1 insertion(+)
+ create mode 100644 commit4_develop.txt
+
+
+$ git branch
+* develop
+  master
+
+
+$ git checkout master
+Switched to branch 'master'
+
+
+$ git branch
+  develop
+* master
+
+
+$ git merge develop
+Merge made by the 'recursive' strategy.
+ commit2_develop.txt | 1 +
+ commit4_develop.txt | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 commit2_develop.txt
+ create mode 100644 commit4_develop.txt
+
+
+$ git branch spider
+
+
+$ git checkout spider
+Switched to branch 'spider'
+
+
+$ touch Commit5_spider.txt
+
+
+$ start commit5_spider.txt
+
+
+$ git branch
+  develop
+  master
+* spider
+
+
+$ git status
+On branch spider
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Commit5_spider.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+$ git add .
+
+
+$ git status
+On branch spider
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Commit5_spider.txt
+
+
+
+$ git commit -m "Commit5_spider"
+[spider 4117133] Commit5_spider
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Commit5_spider.txt
+
+
+$ touch commit6_spider.txt
+
+
+$ start commit6_spider.txt
+
+
+$ git add commit6_spider.txt
+
+
+$ git commit -m "commit6_spider"
+[spider e792f0b] commit6_spider
+ 1 file changed, 1 insertion(+)
+ create mode 100644 commit6_spider.txt
+
+
+$ git checkout master
+Switched to branch 'master'
+
+
+$ git log
+commit ee1c4f589e8bc2587363ca6ea725a51be0598faa (HEAD -> master)
+Merge: 4cbcee6 95b258b
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 20:01:08 2020 +0400
+
+    Merge branch 'develop'
+
+commit 95b258babb337ee71b663931910386752c2f558f (develop)
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 19:57:34 2020 +0400
+
+    Commit4_develop
+
+commit 4cbcee685703f2bda460f921b18bdb3ce22e14d7
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 19:56:02 2020 +0400
+
+    Commit3_master
+
+commit 115b65fefa0dfaf2b9cf12ad384e94e9b0b68fb7
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 19:53:49 2020 +0400
+
+    Commit2_Develop
+
+commit 83ba8ec099ec4035c58af29e78bc15ce35087824
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 19:52:02 2020 +0400
+
+    Initial Commit
+
+
+$ git merge spider
+Updating ee1c4f5..e792f0b
+Fast-forward
+ Commit5_spider.txt | 1 +
+ commit6_spider.txt | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 Commit5_spider.txt
+ create mode 100644 commit6_spider.txt
+
+
+$ git branch
+  develop
+* master
+  spider
+
+
+$ git branch -d develop
+Deleted branch develop (was 95b258b).
+
+
+$ git branch
+* master
+  spider
+
+
+$ git branch -d spider
+Deleted branch spider (was e792f0b).
+
+
+$ git branch
+* master
+
+
+$ git remote add origin https://github.com/jeremytinkers/Spider_Inductions_Task_1.git
+
+
+$ git push -u origin master
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (20/20), 1.54 KiB | 393.00 KiB/s, done.
+Total 20 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), done.
+To https://github.com/jeremytinkers/Spider_Inductions_Task_1.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+
+$ git log
+commit e792f0bfdc3fda4d10a765cc47872f436d90da16 (HEAD -> master, origin/master)
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 20:05:49 2020 +0400
+
+    commit6_spider
+
+commit 4117133f301384865e7b5de11b6de4eb6e0beae6
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 20:05:00 2020 +0400
+
+    Commit5_spider
+
+commit ee1c4f589e8bc2587363ca6ea725a51be0598faa
+Merge: 4cbcee6 95b258b
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 20:01:08 2020 +0400
+
+    Merge branch 'develop'
+
+commit 95b258babb337ee71b663931910386752c2f558f
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 19:57:34 2020 +0400
+
+    Commit4_develop
+
+commit 4cbcee685703f2bda460f921b18bdb3ce22e14d7
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 19:56:02 2020 +0400
+
+    Commit3_master
+
+commit 115b65fefa0dfaf2b9cf12ad384e94e9b0b68fb7
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 19:53:49 2020 +0400
+
+    Commit2_Develop
+
+commit 83ba8ec099ec4035c58af29e78bc15ce35087824
+Author: unknown <jtreplies@gmail.com>
+Date:   Mon Aug 17 19:52:02 2020 +0400
+
+    Initial Commit
+
+
+$
+
+
+$ touch GitCommands.txt
+
+
+$ start GitCommands.txt
+
